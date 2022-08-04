@@ -20,7 +20,7 @@ function ShowList(props) {
                 
             }}>
               <div className="showDate">
-                {new Date(individualShow.showDate).toDateString()}
+                {new Date(individualShow.showDate).toLocaleString('en-En',{weekday: "short", month: "short", day: "numeric"})}
               </div>
 
             <div>
@@ -57,7 +57,7 @@ function ShowList(props) {
             
               }}>
                 <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
-             
+                    
                 <Link to={`/show/${individualShow._id}`}>
                     <small>details</small>
                 </Link>

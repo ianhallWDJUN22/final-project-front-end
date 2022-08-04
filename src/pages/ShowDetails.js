@@ -18,7 +18,6 @@ function ShowDetails(props){
         .get(`${API_URL}/api/show/${showId}`)
         .then((response) => {
             const thisShow = response.data;
-            console.log(response.data)
             setShow(thisShow);
         })
         .catch((err) => console.log(err));
@@ -39,28 +38,32 @@ function ShowDetails(props){
 
             {show.newVenue === "" && (
             <div>
+             <label>Venue:</label>
               <Link to={`/venue/${show.venue._id}`}>
-                <h3>Venue: {show.venue.venueName}</h3>
+                <h3>{show.venue.venueName}</h3>
               </Link>
             </div>
             )}
             {show.newVenue !== "" && (
                 <div>
-                    <h4>Venue: {show.newVenue}</h4>
+                  <label>Venue:</label>
+                    <h4>{show.newVenue}</h4>
                 </div>)}
             
 
             {show.newArtist === "" && (
             <div>
+            <label>Artist:</label>
               <Link to={`/artist/${show.artist._id}`}>   
-                <h3>Act: {show.artist.artistName}</h3>
+                <h3>{show.artist.artistName}</h3>
               </Link>
              </div>
              )}
 
              {show.newArtist !== "" && (
                 <div>
-                    <h4>Artist: {show.newArtist}</h4>
+                <label>Artist:</label>
+                    <h4>{show.newArtist}</h4>
                 </div>)}
 
              
@@ -74,6 +77,9 @@ function ShowDetails(props){
                 <article>{show && show.description}</article>
              </div>
 
+             <div>
+                <p>Cost: {show.cost}</p>
+             </div>
              {user && show && show.artist && show.artist._id.toString() === user._id.toString() && (
                 <div>
                     <Link to={`/shows/edit/${show._id}`}>
@@ -81,6 +87,7 @@ function ShowDetails(props){
                     </Link>
                 </div>
              )}
+
 
              {user && show && show.venue && show.venue._id.toString() === user._id.toString() && (
                 <div>

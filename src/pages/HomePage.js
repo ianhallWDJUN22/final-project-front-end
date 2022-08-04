@@ -24,7 +24,10 @@ function HomePage() {
       <div>
         <h1 style={{
           marginTop: '5%'
-        }}>Upcoming Shows</h1>
+        }}><b>baseNote</b></h1>
+        <h2 style={{
+          marginTop: '5%'
+        }}>Upcoming Shows:</h2>
         <ShowList shows={shows}/>
       </div>
     );

@@ -87,25 +87,6 @@ function EditShow(props) {
           >Update Show</h3>
     
           <form onSubmit={handleFormSubmit}>
-        <div
-        style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            marginBottom: '10px'
-
-           }}>
-          <DatePicker
-          
-          selected={ new Date(showDate)}
-          onChange={(date) => setShowDate(date)}
-          minDate={new Date()}
-          maxDate={maxDate}
-          showTimeSelectOnly
-          timeInputLabel="Time:"
-          dateFormat="MMMM d, yyyy h:mm aa"
-        />
-        </div>
     
            <div style={{
             display: 'flex',
@@ -148,11 +129,31 @@ function EditShow(props) {
           />
         </div>
             
+        
+
+        <div
+        style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            marginBottom: '10px'
+
+           }}>
+          <DatePicker
+          
+          selected={ new Date(showDate)}
+          onChange={(date) => setShowDate(date)}
+          minDate={new Date()}
+          maxDate={maxDate}
+          showTimeSelectOnly
+          timeInputLabel="Time:"
+          dateFormat="MMMM d, yyyy h:mm aa"
+        />
+        </div>
+        
         <div>
             <button type="submit">Submit</button>
         </div>
-
-        
     
     
           </form>

@@ -12,45 +12,41 @@ const API_URL = "http://localhost:5005";
 
 
 
-function VenuePage (props) {
-    const [venue, setVenue] = useState(null);
-    const { venueId } = useParams();
+function ArtistPage (props) {
+    const [artist, setArtist] = useState(null);
+    const { artistId } = useParams();
 
 
 
     useEffect(()=> {
         axios
-        .get(`${API_URL}/api/venue/${venueId}`)
+        .get(`${API_URL}/api/artist/${artistId}`)
         .then((response) => {
-            const thisVenue = response.data;
+            const thisArtist = response.data;
             console.log(response.data)
-            setVenue(thisVenue);
+            setArtist(thisArtist);
         })
         .catch((err) => console.log(err));
-    }, [venueId] );
+    }, [artistId] );
 
 
 
 
     return (
-        <div className="VenuePage">
-         {venue && (
+        <div className="ArtistPage">
+         {artist && (
             <>
-                <h1>{venue.venueName}</h1>
-                {venue.address && (
-                    <h2>{venue.address}</h2>
-                )}
-                
-                {venue.description && (
+                {artist.description && (
                     <>
+                    <h1>{artist.artistName}</h1>
                     <label>Bio:</label>
-                <p>{venue.description}</p>
+                <p>{artist.description}</p>
                 </>
                 )}
 
             <div>
                 <h3>Upcoming Shows:</h3>
-                {venue.shows.map((individualShow) => {
+                {artist.shows.map((individualShow) => {
                     return(
                         <>
                        
@@ -85,4 +81,4 @@ function VenuePage (props) {
     )
 }
 
-export default VenuePage
+export default ArtistPage

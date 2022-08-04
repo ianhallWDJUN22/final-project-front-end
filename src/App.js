@@ -11,6 +11,8 @@ import IsPrivate from "./components/IsPrivate";
 import AddShow from "./pages/AddShow";
 import ShowDetails from "./pages/ShowDetails";
 import EditShow from "./pages/EditShow";
+import VenuePage from "./pages/VenuePage";
+import ArtistPage from "./pages/ArtistPage";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/login/artist" element={<ArtistLoginPage />} />
         <Route path="/show/create" element={<IsPrivate> <AddShow /> </IsPrivate>} />
         <Route path="/show/:showId" element={<ShowDetails />} />
+        <Route path="/venue/:venueId" element={<VenuePage />} />
+        <Route path="/artist/:artistId" element={<ArtistPage /> } />
         <Route path="/shows/edit/:showId" element={<EditShow />} />
       </Routes>
       </div>

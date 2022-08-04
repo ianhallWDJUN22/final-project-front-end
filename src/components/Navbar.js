@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../context/auth.context'
 import "./Navbar.css"
-// import baseNote from "../images/png-clipart-clef-bass-guitar-treble-bass-guitar-monochrome-silhouette-thumbnail.png"
 
 function Navbar() {
 
@@ -31,11 +30,6 @@ function Navbar() {
 
   return (
     <nav>
-    {/* <img src={baseNote} alt="baseNote logo" 
-    style={{
-      height: "40px",
-      justifySelf: "left"
-    }}/> */}
 
     {(toggleMenu || screenWidth > 500) && (
     <ul className="list">
@@ -96,19 +90,20 @@ function Navbar() {
 
     )}
   <button style={{
-      color: 'rgb(57, 22, 159)',
+      color: 'rgb(57, 22, 159, 0.8)',
       border: 'solid 2px',
-      borderColor: 'rgb(57, 22, 159)',
-      backgroundColor: 'rgb(250, 250, 250, 0.2)'
+      borderColor: 'rgb(57, 22, 159, 0.7)',
+      
       
     }}className="btn"><b>b</b></button>
 
-    {(toggleMenu || screenWidth < 500) && (
+    {(toggleMenu || screenWidth <= 500) && (
     <button style={{
-      color: 'rgb(57, 22, 159)',
+      color: 'white',
       border: 'solid 2px',
-      borderColor: 'rgb(57, 22, 159)',
-      backgroundColor: 'rgb(250, 250, 250, 0.2)'
+      borderColor: 'white',
+      backgroundColor: 'rgb(57, 22, 159, 0.2)'
+      
       
     }} onClick={toggleNav} className="btn"><b>b</b></button>
     )}
@@ -116,6 +111,7 @@ function Navbar() {
   );
 }
  
+
 export default Navbar;
 
 {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
