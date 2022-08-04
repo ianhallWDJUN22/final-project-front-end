@@ -8,7 +8,7 @@ import './AddShow.css'
 // import {subDays, addDays} from "date-fns/subDays";
 
 import axios from "axios";
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 
@@ -87,7 +87,7 @@ function AddShow(props) {
     <div style={{
       marginRight: '5%',
       marginLeft: '5%',
-      marginTop: '40px',
+      marginTop: '85px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',

@@ -5,6 +5,7 @@ nav {
     background: linear-gradient(45deg,  rgb(57, 22, 159), rgb(235, 122, 105));
     margin-bottom: 0px;
     padding-bottom: 10px;
+    position: fixed;
 }
 
 

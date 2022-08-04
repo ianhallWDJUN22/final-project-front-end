@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ShowList from '../components/ShowList';
 import axios from "axios";
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function HomePage() {
@@ -23,7 +23,7 @@ function HomePage() {
     return (
       <div>
         <h1 style={{
-          marginTop: '5%'
+          marginTop: '85px',
         }}><b>baseNote</b></h1>
         <h2 style={{
           marginTop: '5%'

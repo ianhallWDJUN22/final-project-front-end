@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./VenueSignupPage.css"
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function VenueSignupPage(props) {
@@ -49,13 +49,12 @@ function VenueSignupPage(props) {
       marginBottom: '40px'
 
     }} className="SignupPage">
-      <h1>Venue Signup</h1>
-      <h1>></h1>
+      <h1>Venue Signup |</h1>
       <Link style={{
           textDecoration: 'none',
           color: 'rgb(128, 128, 128, 0.5)'
         }} to={"/signup/artist"} >
-        <h1  className="unselected">Artist Signup</h1>
+        <h1  className="unselected">| Artist Signup</h1>
       </Link>
      
       </div>
@@ -101,7 +100,7 @@ function VenueSignupPage(props) {
         />
       </div>
 
-        {/* <div style={{
+        <div style={{
         display: 'flex',
         flexDirection: 'column',
         marginBottom: '20px'
@@ -115,7 +114,7 @@ function VenueSignupPage(props) {
             value={username}
             onChange={handleUsername}
           />
-        </div> */}
+        </div>
 
         <div style={{
         display: 'flex',
