@@ -3,9 +3,19 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(45deg,  rgb(127, 73, 203), rgb(253, 185, 175));
-  background-repeat: no-repeat;
-  background-size: cover;
-  
 
+}
+
+.error-message {
+  color:rgb(17, 3, 1);
+  background-Color: rgb(249, 124, 124);
+  padding: 5px;
+  box-shadow: gray;
+  border-radius: 5px;
+  box-shadow: dimgray 5px;
+  font-weight: 500;
+}
+
+Link {
+  text-decoration: none;
 }

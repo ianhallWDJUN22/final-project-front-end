@@ -6,6 +6,7 @@ nav {
     margin-bottom: 0px;
     padding-bottom: 10px;
     position: fixed;
+    border-bottom: solid 1.5px rgb(95, 2, 111);
 }
 
 
@@ -29,11 +30,11 @@ nav {
 
 .btn {
     position: absolute;
-    right: 8px;
-    top: 8px;
-    padding: 2px 10px;
+    right: 7px;
+    top: 5.5px;
+    padding: 0px 0px;
     color: rgb(57, 22, 159);
-    font-size: 20px;
+    font-size: 30px;
     border: solid 2px;
     border-color: rgb(57, 22, 159);
 }

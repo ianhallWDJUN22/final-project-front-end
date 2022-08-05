@@ -89,23 +89,26 @@ function Navbar() {
 
 
     )}
-  <button style={{
+  {/* <button style={{
       color: 'rgb(57, 22, 159, 0.8)',
       border: 'solid 2px',
       borderColor: 'rgb(57, 22, 159, 0.7)',
       
       
-    }}className="btn"><b>b</b></button>
+    }}className="btn"><b>ⓑ</b></button> */}
 
     {(toggleMenu || screenWidth <= 500) && (
     <button style={{
       color: 'white',
       border: 'solid 2px',
       borderColor: 'white',
-      backgroundColor: 'rgb(57, 22, 159, 0.2)'
+      backgroundColor: 'rgb(57, 22, 159, 0.2)',
+      fontSize: '25px',
+      padding: '0 10px',
       
       
-    }} onClick={toggleNav} className="btn"><b>b</b></button>
+      
+    }} onClick={toggleNav} className="btn">≡</button>
     )}
     </nav>
   );

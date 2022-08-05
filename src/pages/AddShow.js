@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import DatePicker from "react-datepicker";
-import './AddShow.css'
 
 // import {subDays, addDays} from "date-fns/subDays";
 

@@ -22,11 +22,20 @@ function HomePage() {
 
     return (
       <div>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+      }}>
         <h1 style={{
           marginTop: '85px',
-        }}><b>baseNote</b></h1>
+          color: 'rgb(119, 68, 242)'
+        }}><b>ⓑaseNote</b></h1>
+     
+        </div>
+
         <h2 style={{
-          marginTop: '5%'
+          marginTop: '5%',
+          color: 'rgb(50, 42, 150)'
         }}>Upcoming Shows:</h2>
         <ShowList shows={shows}/>
       </div>

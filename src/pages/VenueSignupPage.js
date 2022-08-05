@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./VenueSignupPage.css"
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -45,11 +44,14 @@ function VenueSignupPage(props) {
       display: 'flex',
       textAlign: 'center',
       justifyContent: 'center',
-      marginTop: '60px',
+      marginTop: '85px',
       marginBottom: '40px'
+      
 
     }} className="SignupPage">
-      <h1>Venue Signup |</h1>
+      <h1 style={{
+        color: 'rgb(50, 42, 150)'
+      }}>Venue Signup |</h1>
       <Link style={{
           textDecoration: 'none',
           color: 'rgb(128, 128, 128, 0.5)'
@@ -62,7 +64,11 @@ function VenueSignupPage(props) {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        margin: '5%'
+        margin: '5%',
+        backgroundColor: 'rgb(136, 37, 114, 0.3)',
+        padding: '15px',
+        borderRadius: '5px',
+        paddingTop: '20px',
       }}>
 
       <form onSubmit={handleSignupSubmit}>
@@ -72,7 +78,7 @@ function VenueSignupPage(props) {
         flexDirection: 'column',
         marginBottom: '20px',
       }}>
-        <label>Email:</label>
+        <label><b>Email:</b></label>
         <input style={{
           textAlign: 'center'
         }}
@@ -88,7 +94,7 @@ function VenueSignupPage(props) {
         flexDirection: 'column',
         marginBottom: '20px'
       }}>
-        <label>Password:</label>
+        <label><b>Password:</b></label>
         <input style={{
           textAlign: 'center'
         }}
@@ -105,7 +111,7 @@ function VenueSignupPage(props) {
         flexDirection: 'column',
         marginBottom: '20px'
       }}>
-          <label>User Name:</label>
+          <label><b>User Name:</b></label>
           <input style={{
           textAlign: 'center'
         }}
@@ -121,7 +127,7 @@ function VenueSignupPage(props) {
         flexDirection: 'column',
         marginBottom: '20px',
       }}>
-          <label>Venue Name:</label>
+          <label><b>Venue Name:</b></label>
           <input style={{
           textAlign: 'center'
         }}
@@ -133,18 +139,25 @@ function VenueSignupPage(props) {
         </div>
 
         <div style={{
-          marginTop: '20px',
-           marginBottom: '20px'
-        }}>
-          <button type="submit">Sign Up</button>
-        </div>
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px'
+      }}>
+        <button style={{
+          borderRadius: '5px',
+          backgroundColor: 'rgb(250, 250, 250, 0.8)',
+          marginTop: '20px'
+        }} type="submit">Sign Up</button>
+      </div>
 
       </form>
 
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-      <p>Already have account?</p>
-      <Link to={"/login/venue"}> Login</Link>
+      <label>Already have an account?</label>
+      <Link style={{
+        color: 'gold',
+      }} to={"/login/venue"}> Login</Link>
     </div>
     </>
   )

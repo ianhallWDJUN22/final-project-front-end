@@ -44,35 +44,91 @@ const handleLoginSubmit = (e) => {
 
   
   return (
-    <div className="LoginPage">
-      <h1>Venue Login</h1>
-      <h3>Need to log in as an artist?</h3>
-      <Link to="/login/artist">Click Here</Link>
+    <>
+    <div style={{
+      display: 'flex',
+      textAlign: 'center',
+      justifyContent: 'center',
+      marginTop: '85px',
+      marginBottom: '40px'
+      
 
+    }}>
+      <h1 style={{
+        color: 'rgb(50, 42, 150)'
+      }}>Venue Login |</h1>
+      <Link style={{
+          textDecoration: 'none',
+          color: 'rgb(128, 128, 128, 0.8)'
+        }} to={"/login/artist"} >
+        <h1  className="unselected">| Artist Login</h1>
+      </Link>
+
+      </div>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        margin: '5%',
+        backgroundColor: 'rgb(136, 37, 114, 0.3)',
+        padding: '15px',
+        borderRadius: '5px',
+        paddingTop: '20px',
+      }}>
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
+
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px'
+      }}>
+        <label><b>Email:</b></label>
         <input 
           type="email"
           name="email"
           value={email}
           onChange={handleEmail}
+          style={{
+            textAlign: 'center'
+          }}
         />
+        </div>
 
-        <label>Password:</label>
+        <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px'
+      }}>
+        <label><b>Password:</b></label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
+          style={{
+            textAlign: 'center'
+          }}
         />
-
-        <button type="submit">Login</button>
+        </div>
+        <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px'
+      }}>
+        <button style={{
+          borderRadius: '5px',
+          backgroundColor: 'rgb(250, 250, 250, 0.9)'
+        }} type="submit">Login</button>
+      </div>
+      
       </form>
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup/venue"}> Sign Up</Link>
-    </div>
+      <label>Don't have an account yet?</label>
+      <Link style={{
+        color: 'gold'
+      }} to={"/signup/venue"}> Sign Up</Link>
+      </div>
+      </>
   )
 }
 

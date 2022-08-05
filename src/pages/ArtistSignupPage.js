@@ -36,52 +36,184 @@ function ArtistSignupPage(props) {
 
   
   return (
-    <div className="SignupPage">
-      <h1>Artist Signup</h1>
-      <h3>Not an artist?</h3>
-      <Link to={"/signup/venue"} >Click here to register as a venue!</Link>
 
-      <form className ="venueSignup" onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input 
+    <>
+
+    <div style={{
+      display: 'flex',
+      textAlign: 'center',
+      justifyContent: 'center',
+      marginTop: '85px',
+      marginBottom: '40px'
+
+    }} className="SignupPage">
+      
+      <Link style={{
+          textDecoration: 'none',
+          color: 'rgb(128, 128, 128, 0.5)'
+        }} to={"/signup/venue"} >
+        <h1  className="unselected">Venue Signup |</h1>
+      </Link>
+      <h4></h4>
+      <h1 style={{
+        color: 'rgb(50, 42, 150)'
+      }}>| Artist Signup</h1>
+     
+      </div>
+
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        margin: '5%',
+        backgroundColor: 'rgb(136, 37, 114, 0.3)',
+        padding: '15px',
+        borderRadius: '5px',
+        paddingTop: '20px',
+      }}>
+
+      <form style={{
+        
+      }} onSubmit={handleSignupSubmit}>
+      <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px',
+        
+      }}>
+        <label><b>Email:</b></label>
+        <input style={{
+          textAlign: 'center'
+        }}
           type="email"
           name="email"
           value={email}
           onChange={handleEmail}
+          placeholder="example@artist.com"
         />
-
-        <label>Password:</label>
-        <input 
+      </div>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px'
+      }}>
+        <label><b>Password:</b></label>
+        <input style={{
+          textAlign: 'center'
+        }}
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
+          placeholder="******"
         />
+      </div>
 
-        <label>User Name:</label>
-        <input 
-          type="text"
-          name="name"
-          value={username}
-          onChange={handleUsername}
-        />
+        <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px'
+      }}>
+          <label><b>User Name:</b></label>
+          <input style={{
+          textAlign: 'center'
+        }}
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleUsername}
+          />
+        </div>
 
-        <label>Artist Name:</label>
-        <input
-          type="text"
-          name="venueName"
-          value={artistName}
-          onChange={handleArtistName}  
-        />
+        <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px',
+      }}>
+          <label><b>Artist Name:</b></label>
+          <input style={{
+          textAlign: 'center'
+        }}
+            type="text"
+            name="venueName"
+            value={artistName}
+            onChange={handleArtistName}  
+          />
+        </div>
 
-        <button type="submit">Sign Up</button>
+        <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '20px',
+        justifyContent: 'center'
+      }}>
+        <button style={{
+          borderRadius: '5px',
+          backgroundColor: 'rgb(250, 250, 250, 0.8)',
+          marginLeft: '20%',
+          marginRight: '20%',
+          marginTop: '20px'
+        }} type="submit">Sign Up</button>
+      </div>
+
       </form>
 
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-      <p>Already have account?</p>
-      <Link to={"/login/artist"}> Login</Link>
+      <label>Already have an account?</label>
+      <Link style={{
+        color: 'gold'
+      }} to={"/login/artist"}> Login</Link>
     </div>
+    </>
+
+
+    // <div className="SignupPage">
+    //   <h1>Artist Signup</h1>
+    //   <h3>Not an artist?</h3>
+    //   <Link to={"/signup/venue"} >Click here to register as a venue!</Link>
+
+    //   <form className ="venueSignup" onSubmit={handleSignupSubmit}>
+    //     <label>Email:</label>
+    //     <input 
+    //       type="email"
+    //       name="email"
+    //       value={email}
+    //       onChange={handleEmail}
+    //     />
+
+    //     <label>Password:</label>
+    //     <input 
+    //       type="password"
+    //       name="password"
+    //       value={password}
+    //       onChange={handlePassword}
+    //     />
+
+    //     <label>User Name:</label>
+    //     <input 
+    //       type="text"
+    //       name="name"
+    //       value={username}
+    //       onChange={handleUsername}
+    //     />
+
+    //     <label>Artist Name:</label>
+    //     <input
+    //       type="text"
+    //       name="venueName"
+    //       value={artistName}
+    //       onChange={handleArtistName}  
+    //     />
+
+    //     <button type="submit">Sign Up</button>
+    //   </form>
+
+    //   { errorMessage && <p className="error-message">{errorMessage}</p> }
+
+    //   <p>Already have account?</p>
+    //   <Link to={"/login/artist"}> Login</Link>
+    // </div>
   )
 }
 
