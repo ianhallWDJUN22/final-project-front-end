@@ -15,6 +15,8 @@ function ShowList(props) {
                 border: 'solid 2px',
                 borderColor: "rgb(75 38 147)",
                 margin: '5%',
+                backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                
                 
                 
             }}>
@@ -22,15 +24,15 @@ function ShowList(props) {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                flex: '1',
+                flex: '1.5',
                 justifyContent: 'space-around',
                 borderRight: 'solid 2px',
                 borderColor: "rgb(75 38 147)"
               }}>
                 
-                <p>{new Date(individualShow.showDate).toLocaleString('en-En',{weekday: "short", month: "short", day: "numeric"})}</p>
+                <p><b>{new Date(individualShow.showDate).toLocaleString('en-En',{weekday: "short", month: "short", day: "numeric"})}</b></p>
                 
-                <p>{new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
+                <p><b>{new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</b></p>
               
             </div>
 

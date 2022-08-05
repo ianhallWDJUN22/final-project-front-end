@@ -35,9 +35,20 @@ function HomePage() {
 
         <h2 style={{
           marginTop: '5%',
-          color: 'rgb(50, 42, 150)'
+          marginLeft: '5%',
+          marginRight: '5%',
+          color: 'rgb(50, 42, 150)',
+          paddingBottom: '15px',
+          borderBottom: 'solid 1px',
+          marginBottom: '0'
         }}>Upcoming Shows:</h2>
+        <div style={{
+          height: '600px',
+          overflow: 'auto scroll',
+          marginTop: '0'
+        }}>
         <ShowList shows={shows}/>
+        </div>
       </div>
     );
   }

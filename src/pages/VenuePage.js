@@ -33,10 +33,13 @@ function VenuePage (props) {
 
 
     return (
-        <div className="VenuePage">
+        <div className="VenuePage" style={{
+            marginTop: ''
+        }}>
          {venue && (
             <>
                 <h1>{venue.venueName}</h1>
+
                 {venue.address && (
                     <h2>{venue.address}</h2>
                 )}
@@ -48,13 +51,25 @@ function VenuePage (props) {
                 </>
                 )}
 
-            <div>
+                <div style={{
+                display: 'flex',
+                border: 'solid 2px',
+                borderColor: "rgb(75 38 147)",
+                margin: '5%',
+                backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                borderRadius: '5px',
+                padding: '5px',
+                justifyContent: 'space-between',
+                overflow: 'scroll',
+                height: '600'
+                
+                
+                }}>
                 <h3>Upcoming Shows:</h3>
                 {venue.shows.map((individualShow) => {
                     return(
                         <>
-                       
-                            {new Date().toDateString() >= new Date(individualShow.showDate).toDateString() && (
+                            {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
                                 <>
                                 <div>
                                     <p>{new Date(individualShow.showDate).toDateString()}</p>

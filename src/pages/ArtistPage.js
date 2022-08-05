@@ -33,26 +33,44 @@ function ArtistPage (props) {
 
 
     return (
-        <div className="ArtistPage">
+        <div className="ArtistPage" style={{
+            marginTop: '85px'
+        }}>
          {artist && (
             <>
+                    <h1 style={{
+                        marginBottom: '20px'
+
+                    }}>{artist.artistName}</h1>
                 {artist.description && (
                     <>
-                    <h1>{artist.artistName}</h1>
                     <label>Bio:</label>
                 <p>{artist.description}</p>
                 </>
                 )}
 
             <div>
-                <h3>Upcoming Shows:</h3>
+                <h3 style={{
+                    marginTop: '40px'
+                }}>Upcoming Shows:</h3>
                 {artist.shows.map((individualShow) => {
                     return(
                         <>
-                       
-                            {new Date().toDateString() >= new Date(individualShow.showDate).toDateString() && (
+                        <div style={{
+                display: 'flex',
+                border: 'solid 2px',
+                borderColor: "rgb(75 38 147)",
+                margin: '5%',
+                backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                borderRadius: '5px',
+                padding: '5px',
+                justifyContent: 'space-between'
+                
+                
+            }}>
+                            {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
                                 <>
-                                <div>
+                                <div  key={individualShow._id}>
                                     <p>{new Date(individualShow.showDate).toDateString()}</p>
                            
                                 </div>
@@ -61,14 +79,19 @@ function ArtistPage (props) {
                                         flexDirection: 'column',
                                         justifyContent: 'space-between'
                                         }}>
-                <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
-             
-                <Link to={`/show/${individualShow._id}`}>
-                    <p>Show Details</p>
-                </Link>
-              </div>
+                                    <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
+                                </div>
+                                <div style={{
+                                
+                                }}>
+                                    <Link to={`/show/${individualShow._id}`}>
+                                        <p>Show Details</p>
+                                    </Link>
+                                </div>
+              
               </>
               )}
+              </div>
                         </>
                     )
                 })}

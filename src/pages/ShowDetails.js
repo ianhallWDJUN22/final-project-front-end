@@ -24,20 +24,41 @@ function ShowDetails(props){
     }, [showId] );
 
     return(
-        <div className="ShowDetails">
+        <div className="ShowDetails"
+        style={{
+            marginTop: '85px'
+        }}>
         {show && (
             <>
-            <div>
+            <div style={{
+                marginBottom: '50px'
+            }}>
                 <h1>Event Details</h1>
             </div>
             
-            <div>
+
+            <div style={{
+                display: 'flex',
+                border: 'solid 2px',
+                borderColor: "rgb(75 38 147)",
+                margin: '5%',
+                backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                flexDirection: 'column'
+                
+                
+                
+            }}>
+            <div style={{
+                marginBottom: '10px'
+            }}>
                 <h3>{new Date(show.showDate).toDateString()}</h3>
             </div>
            
 
             {show.newVenue === "" && (
-            <div>
+            <div style={{
+                marginBottom: '10px'
+            }}>
              <label>Venue:</label>
               <Link to={`/venue/${show.venue._id}`}>
                 <h3>{show.venue.venueName}</h3>
@@ -45,14 +66,18 @@ function ShowDetails(props){
             </div>
             )}
             {show.newVenue !== "" && (
-                <div>
+                <div style={{
+                marginBottom: '10px'
+            }}>
                   <label>Venue:</label>
                     <h4>{show.newVenue}</h4>
                 </div>)}
             
 
             {show.newArtist === "" && (
-            <div>
+            <div style={{
+                marginBottom: '10px'
+            }}>
             <label>Artist:</label>
               <Link to={`/artist/${show.artist._id}`}>   
                 <h3>{show.artist.artistName}</h3>
@@ -61,27 +86,37 @@ function ShowDetails(props){
              )}
 
              {show.newArtist !== "" && (
-                <div>
+                <div style={{
+                marginBottom: '10px'
+            }}>
                 <label>Artist:</label>
                     <h4>{show.newArtist}</h4>
                 </div>)}
 
              
             
-            <div>
+            <div style={{
+                marginBottom: '10px'
+            }}>
                 <h4>Starts: {new Date (show.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</h4>
              </div>
            
-            <div>
+            <div style={{
+                marginBottom: '10px'
+            }}>
                 <h4>Description:</h4>
                 <article>{show && show.description}</article>
              </div>
 
-             <div>
+             <div style={{
+                marginBottom: '10px'
+            }}>
                 <p>Cost: {show.cost}</p>
              </div>
              {user && show && show.artist && show.artist._id.toString() === user._id.toString() && (
-                <div>
+                <div style={{
+                marginBottom: '10px'
+            }}>
                     <Link to={`/shows/edit/${show._id}`}>
                         <small>update your event!</small>
                     </Link>
@@ -96,6 +131,7 @@ function ShowDetails(props){
                     </Link>
                 </div>
              )}
+             </div>
 
             </>
          )}
