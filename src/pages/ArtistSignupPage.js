@@ -54,7 +54,7 @@ function ArtistSignupPage(props) {
         }} to={"/signup/venue"} >
         <h1  className="unselected">Venue Signup |</h1>
       </Link>
-      <h4></h4>
+      
       <h1 style={{
         color: 'rgb(50, 42, 150)'
       }}>| Artist Signup</h1>

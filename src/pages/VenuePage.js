@@ -34,11 +34,14 @@ function VenuePage (props) {
 
     return (
         <div className="VenuePage" style={{
-            marginTop: ''
+            marginTop: '85'
         }}>
          {venue && (
             <>
-                <h1>{venue.venueName}</h1>
+                <h1 style={{
+                    marginTop: '85px',
+                    marginBottom: '60px'
+                }}>{venue.venueName}</h1>
 
                 {venue.address && (
                     <h2>{venue.address}</h2>
@@ -51,24 +54,21 @@ function VenuePage (props) {
                 </>
                 )}
 
-                <div style={{
-                display: 'flex',
-                border: 'solid 2px',
-                borderColor: "rgb(75 38 147)",
-                margin: '5%',
-                backgroundColor: 'rgb(250, 250, 250, 0.4)',
-                borderRadius: '5px',
-                padding: '5px',
-                justifyContent: 'space-between',
-                overflow: 'scroll',
-                height: '600'
-                
-                
-                }}>
+                <div >
                 <h3>Upcoming Shows:</h3>
                 {venue.shows.map((individualShow) => {
                     return(
                         <>
+                       <div style={{
+                            display: 'flex',
+                            border: 'solid 2px',
+                            borderColor: "rgb(75 38 147)",
+                            margin: '5%',
+                            backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                            borderRadius: '5px',
+                            padding: '5px',
+                            justifyContent: 'space-between' 
+                        }}>
                             {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
                                 <>
                                 <div>
@@ -81,13 +81,16 @@ function VenuePage (props) {
                                         justifyContent: 'space-between'
                                         }}>
                 <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
-             
+             </div>
+             <div>
                 <Link to={`/show/${individualShow._id}`}>
                     <p>Show Details</p>
                 </Link>
-              </div>
+             </div>
+        
               </>
               )}
+              </div>
                         </>
                     )
                 })}

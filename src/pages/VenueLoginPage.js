@@ -116,7 +116,10 @@ const handleLoginSubmit = (e) => {
       }}>
         <button style={{
           borderRadius: '5px',
-          backgroundColor: 'rgb(250, 250, 250, 0.9)'
+          backgroundColor: 'rgb(250, 250, 250, 0.8)',
+          marginLeft: '20%',
+          marginRight: '20%',
+          marginTop: '20px'
         }} type="submit">Login</button>
       </div>
       
