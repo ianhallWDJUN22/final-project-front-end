@@ -1,0 +1,35 @@
+
+svg {
+	width: 100%;
+	max-width: 5rem;
+	animation: rotate 3.6s linear infinite;
+}
+
+circle {
+	fill: none;
+	stroke: slateblue;
+	stroke-width: 8px;
+	stroke-dasharray: 300;
+	animation: outline 2s cubic-bezier(0.77,0,0.18,1) infinite;
+}
+
+@keyframes outline {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dashoffset: 300;
+	}
+	100% {
+		stroke-dashoffset: 600;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0turn);
+	}
+	to {
+		transform: rotate(-1turn);
+	}
+}

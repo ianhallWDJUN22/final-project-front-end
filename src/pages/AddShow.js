@@ -84,15 +84,14 @@ function AddShow(props) {
 
 
     <div style={{
-      marginRight: '5%',
-      marginLeft: '5%',
-      marginTop: '85px',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
-      justityContent: 'center',
-      textAlign: 'center',
-      overflow: 'scroll'
+      margin: '5%',
+      backgroundColor: 'rgb(136, 37, 114, 0.3)',
+      padding: '15px',
+      borderRadius: '5px',
+      paddingTop: '20px',
+      marginTop: '85px'
     }}>
       
       <div className="AddShow" style={{

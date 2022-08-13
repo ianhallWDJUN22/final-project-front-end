@@ -1,10 +1,24 @@
 import { Link } from 'react-router-dom'
+import LoadingSpinner from './LoadingSpinner'
 
 
 
 function ShowList(props) {
 
   return (
+    <>
+
+{props.shows.length == 0 && (
+      <div style ={{
+        margin: '20px'
+      }}>
+        <LoadingSpinner />
+        <h4 style={{
+          margin: '20px'
+        }}>Loading Info</h4>
+      </div>
+    )}
+
     <div className="ShowList">
       {props.shows.map((individualShow) => {
         return (
@@ -16,6 +30,7 @@ function ShowList(props) {
                 borderColor: "rgb(75 38 147)",
                 margin: '5%',
                 backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                borderRadius: '5px'
                 
                 
                 
@@ -85,6 +100,7 @@ function ShowList(props) {
         );
       })}
     </div>
+    </>
   );
 }
 

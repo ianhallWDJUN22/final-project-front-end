@@ -1,3 +1,4 @@
+import LoadingSpinner from "../components/LoadingSpinner";
 import { useState, useEffect } from "react";
 import ShowList from '../components/ShowList';
 import axios from "axios";
@@ -21,6 +22,8 @@ function HomePage() {
     }, [] );
 
     return (
+      
+      
       <div>
       <div style={{
         display: 'flex',
@@ -49,7 +52,9 @@ function HomePage() {
         }}>
         <ShowList shows={shows}/>
         </div>
+        
       </div>
+      
     );
   }
   

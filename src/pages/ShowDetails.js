@@ -100,18 +100,20 @@ function ShowDetails(props){
             }}>
                 <h4>Starts: {new Date (show.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</h4>
              </div>
-           
+           {show.description !== "" && (
             <div style={{
                 marginBottom: '10px'
             }}>
-                <h4>Description:</h4>
+             
+                <h4>Info: </h4>
                 <article>{show && show.description}</article>
              </div>
+            )}
 
              <div style={{
                 marginBottom: '10px'
             }}>
-                <p>Cost: {show.cost}</p>
+                <p><b>Cost: </b>{show.cost}</p>
              </div>
              {user && show && show.artist && show.artist._id.toString() === user._id.toString() && (
                 <div style={{
