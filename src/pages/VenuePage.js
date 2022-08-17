@@ -23,9 +23,6 @@ function VenuePage (props) {
         .catch((err) => console.log(err));
     }, [venueId] );
 
-
-
-
     return (
         <div className="VenuePage" style={{
             marginTop: '85'
