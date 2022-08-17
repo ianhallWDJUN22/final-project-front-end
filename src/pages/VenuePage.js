@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useEffect, useState} from 'react';
 import { Link, useParams } from "react-router-dom";
 
 
+import axios from "axios";
 const API_URL = process.env.REACT_APP_API_URL;
 
 
@@ -48,9 +48,11 @@ function VenuePage (props) {
                 <div >
                 <h3>Upcoming Shows:</h3>
                 {venue.shows.map((individualShow) => {
+                    console.log({individualShow})
                     return(
+                        <div key={individualShow._id + 'b'}>
+                        {/* {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && ( */}
                         <>
-                        {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
                             <div style={{
                                     display: 'flex',
                                     border: 'solid 2px',
@@ -78,8 +80,9 @@ function VenuePage (props) {
                                     </Link>
                                 </div>
                             </div>
-                        )}
                         </>
+                        {/* )} */}
+                        </div>
                     )
                 })}
             </div>

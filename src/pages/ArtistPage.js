@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useEffect, useState} from 'react';
 import { Link, useParams } from "react-router-dom";
 
 
+import axios from "axios";
 const API_URL = process.env.REACT_APP_API_URL;
 
 
@@ -45,10 +45,13 @@ function ArtistPage (props) {
                     marginTop: '40px'
                 }}>Upcoming Shows:</h3>
                 {artist.shows.map((individualShow) => {
+                    console.log({individualShow})
                     return(
-                    <>
-                    {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
-                        <div style={{
+                        <>
+                    {/* {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && ( */}
+                    <div key={individualShow._id + 'b'}>
+                        <>
+                        <div  style={{
                                 display: 'flex',
                                 border: 'solid 2px',
                                 borderColor: "rgb(75 38 147)",
@@ -75,7 +78,9 @@ function ArtistPage (props) {
                                     </Link>
                                 </div>
                         </div>
-                    )}
+                        </>
+                    </div>  
+                    {/* )} */}
                     </>
                     )
                 })}
