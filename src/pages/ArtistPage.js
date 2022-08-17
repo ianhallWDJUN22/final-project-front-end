@@ -3,19 +3,12 @@ import { useEffect, useState} from 'react';
 import { Link, useParams } from "react-router-dom";
 
 
-
 const API_URL = process.env.REACT_APP_API_URL;
-
-
-
-
-
 
 
 function ArtistPage (props) {
     const [artist, setArtist] = useState(null);
     const { artistId } = useParams();
-
 
 
     useEffect(()=> {
@@ -28,8 +21,6 @@ function ArtistPage (props) {
         })
         .catch((err) => console.log(err));
     }, [artistId] );
-
-
 
 
     return (
@@ -55,22 +46,19 @@ function ArtistPage (props) {
                 }}>Upcoming Shows:</h3>
                 {artist.shows.map((individualShow) => {
                     return(
-                        <>
-                        <div style={{
-                display: 'flex',
-                border: 'solid 2px',
-                borderColor: "rgb(75 38 147)",
-                margin: '5%',
-                backgroundColor: 'rgb(250, 250, 250, 0.4)',
-                borderRadius: '5px',
-                padding: '5px',
-                justifyContent: 'space-between'
-                
-                
-            }}>
-                            {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
-                                <>
-                                <div  key={individualShow._id}>
+                    <>
+                    {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
+                        <div   key={individualShow._id} style={{
+                                display: 'flex',
+                                border: 'solid 2px',
+                                borderColor: "rgb(75 38 147)",
+                                margin: '5%',
+                                backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                                borderRadius: '5px',
+                                padding: '5px',
+                                justifyContent: 'space-between'
+                             }}>
+                                <div>
                                     <p>{new Date(individualShow.showDate).toDateString()}</p>
                            
                                 </div>
@@ -81,25 +69,19 @@ function ArtistPage (props) {
                                         }}>
                                     <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
                                 </div>
-                                <div style={{
-                                
-                                }}>
+                                <div>
                                     <Link to={`/show/${individualShow._id}`}>
                                         <p>Show Details</p>
                                     </Link>
                                 </div>
-              
-              </>
-              )}
-              </div>
-                        </>
+                        </div>
+                    )}
+                    </>
                     )
                 })}
             </div>
             </>
-
-         )}
-
+        )}
         </div>
     )
 }

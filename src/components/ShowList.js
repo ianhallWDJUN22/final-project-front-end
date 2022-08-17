@@ -10,7 +10,7 @@ function ShowList(props) {
 
 {props.shows.length == 0 && (
       <div style ={{
-        margin: '20px'
+        marginTop: '30%'
       }}>
         <LoadingSpinner />
         <h4 style={{

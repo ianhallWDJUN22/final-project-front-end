@@ -3,13 +3,7 @@ import { useEffect, useState} from 'react';
 import { Link, useParams } from "react-router-dom";
 
 
-
 const API_URL = process.env.REACT_APP_API_URL;
-
-
-
-
-
 
 
 function VenuePage (props) {
@@ -59,18 +53,17 @@ function VenuePage (props) {
                 {venue.shows.map((individualShow) => {
                     return(
                         <>
-                       <div style={{
-                            display: 'flex',
-                            border: 'solid 2px',
-                            borderColor: "rgb(75 38 147)",
-                            margin: '5%',
-                            backgroundColor: 'rgb(250, 250, 250, 0.4)',
-                            borderRadius: '5px',
-                            padding: '5px',
-                            justifyContent: 'space-between' 
-                        }}>
-                            {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
-                                <>
+                        {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
+                            <div   key={individualShow._id} style={{
+                                    display: 'flex',
+                                    border: 'solid 2px',
+                                    borderColor: "rgb(75 38 147)",
+                                    margin: '5%',
+                                    backgroundColor: 'rgb(250, 250, 250, 0.4)',
+                                    borderRadius: '5px',
+                                    padding: '5px',
+                                    justifyContent: 'space-between' 
+                                    }}>
                                 <div>
                                     <p>{new Date(individualShow.showDate).toDateString()}</p>
                            
@@ -80,25 +73,21 @@ function VenuePage (props) {
                                         flexDirection: 'column',
                                         justifyContent: 'space-between'
                                         }}>
-                <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
-             </div>
-             <div>
-                <Link to={`/show/${individualShow._id}`}>
-                    <p>Show Details</p>
-                </Link>
-             </div>
-        
-              </>
-              )}
-              </div>
+                                <p>Starts: {new Date (individualShow.showDate).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit'} )}</p>
+                                </div>
+                                <div>
+                                    <Link to={`/show/${individualShow._id}`}>
+                                        <p>Show Details</p>
+                                    </Link>
+                                </div>
+                        </div>
+                        )}
                         </>
                     )
                 })}
             </div>
             </>
-
          )}
-
         </div>
     )
 }
