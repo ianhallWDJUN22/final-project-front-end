@@ -54,7 +54,7 @@ function VenuePage (props) {
                     return(
                         <>
                         {new Date().toDateString() <= new Date(individualShow.showDate).toDateString() && (
-                            <div   key={individualShow._id} style={{
+                            <div style={{
                                     display: 'flex',
                                     border: 'solid 2px',
                                     borderColor: "rgb(75 38 147)",
@@ -80,7 +80,7 @@ function VenuePage (props) {
                                         <p>Show Details</p>
                                     </Link>
                                 </div>
-                        </div>
+                            </div>
                         )}
                         </>
                     )
