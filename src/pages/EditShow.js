@@ -157,7 +157,9 @@ function EditShow(props) {
     
     
           </form>
-          <div>
+          <div style={{
+            marginTop: "40px"
+          }}>
             <button onClick={deleteShow} >
                 Delete Event
             </button>
